@@ -1,6 +1,6 @@
-#Galacticraft
+# Galacticraft
 
-##Basic Gameplay
+## Basic Gameplay
 * Players have access to minimal resources
 * Players start off in a basic spaceship (possibly a retextured elytra) and have to mine resources from meteors until they have enough to build a space station
 * In space, they are required to wear a “spacesuit” (retextured armor)
@@ -17,6 +17,6 @@
 * Gravity inside space station, nowhere else
 * Space stations can team up, allies can warp to each other’s space stations
 
-##Future ideas:
+## Future ideas:
 * Procedurally generated planets: they initially are huge spheres with blocks on armorstand heads, but when players enter the atmosphere they get teleported to another world with the planet as that world
 * Alien invasions?
