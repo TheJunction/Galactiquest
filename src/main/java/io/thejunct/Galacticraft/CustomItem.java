@@ -21,8 +21,8 @@ import java.util.List;
 enum CustomItem {
     SPACESHIP(0, Material.ELYTRA),
     SPACESHIP_HEAD(1561),
-    SPACESHIP_CONTROL_THRUST(ChatColor.GREEN + "Thrust", "" + ChatColor.BLUE + "Right click to move forward.", 1560),
-    SPACESHIP_CONTROL_REVERSE(ChatColor.RED + "Reverse", "" + ChatColor.BLUE + "Right click to move backwards.", 1559),
+    SPACESHIP_CONTROL_THRUST(ChatColor.GREEN + "Thrust", ChatColor.BLUE.toString() + "Right click to move forward.", 1560),
+    SPACESHIP_CONTROL_REVERSE(ChatColor.RED + "Reverse", ChatColor.BLUE.toString() + "Right click to move backwards.", 1559),
     SPACESHIP_CONTROL_LASER(ChatColor.DARK_RED + "Laser", 1558, ChatColor.BLUE + "Right click to move shoot a laser.", "Mines meteors.");
 
     private String name;
