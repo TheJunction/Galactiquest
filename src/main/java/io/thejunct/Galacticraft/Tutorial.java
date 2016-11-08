@@ -5,22 +5,21 @@
 
 package io.thejunct.Galacticraft;
 
-import org.bukkit.entity.Player;
-
 /**
  * Created by david on 10/22.
  *
  * @author david
  */
 class Tutorial {
-    private Player player;
+    private GPlayer player;
 
-    Tutorial(Player player) {
+    Tutorial(GPlayer player) {
         this.player = player;
         run();
     }
 
     private void run() {
         //TODO: Create the tutorial.
+        new Spaceship(player);
     }
 }

@@ -30,6 +30,7 @@ public class PlayerData extends Database {
         super("SQLite", "playerdata", "(" +
                 "`uuid` varchar(32) NOT NULL," +
                 "`lastname` varchar(32) NOT NULL," +
+                "`inSpaceShip` int(1) NOT NULL," +
                 "`station` varchar(32) NOT NULL", "uuid");
     }
 
@@ -44,10 +45,10 @@ public class PlayerData extends Database {
         Connection conn = getSQLConnection();
         try (
                 PreparedStatement ps = conn.prepareStatement("INSERT INTO " + dbName +
-                        " (uuid, lastname, station) " +
-                        "VALUES (?,?,?);")
+                        " (uuid, lastname, inSpaceShip, station) " +
+                        "VALUES (?,?,?,?);")
         ) {
-            setValues(ps, uuid, p != null ? p.getName() : "", "");
+            setValues(ps, uuid, p != null ? p.getName() : "", 0, "");
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -86,6 +87,14 @@ public class PlayerData extends Database {
 
     public void setName(String uuid, String name) {
         setData(uuid, "lastname", name);
+    }
+
+    public boolean inSpaceShip(String uuid) {
+        return (int) getData(uuid, "inSpaceShip") == 1;
+    }
+
+    public void setSpaceShip(String uuid, boolean inSpaceShip) {
+        setData(uuid, "inSpaceShip", inSpaceShip ? 1 : 0);
     }
 
     public String getStation(String uuid) {
