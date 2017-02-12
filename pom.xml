@@ -12,7 +12,7 @@
     <artifactId>galactiquest</artifactId>
     <version>0.1</version>
     <name>Galactiquest</name>
-    <description>Galactiquest plugin. By PantherMan594 and HYPExMon5ter. (c) The Junction Network.</description>
+    <description>Galactiquest plugin. By PantherMan594. (c) The Junction Network.</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spigot.version>1.11.2-R0.1-SNAPSHOT</spigot.version>
