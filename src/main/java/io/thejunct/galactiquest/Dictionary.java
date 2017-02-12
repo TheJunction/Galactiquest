@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2016 The Junction Network. All Rights Reserved.
+ * Copyright (c) 2017 The Junction Network. All Rights Reserved.
  * Created by PantherMan594.
  */
 
-package io.thejunct.Galacticraft;
+package io.thejunct.galactiquest;
 
 import org.bukkit.ChatColor;
 

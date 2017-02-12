@@ -3,7 +3,7 @@
  * Created by PantherMan594.
  */
 
-package io.thejunct.Galacticraft;
+package io.thejunct.galactiquest;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

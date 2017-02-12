@@ -1,4 +1,4 @@
-# Galacticraft
+# Galactiquest
 
 ## Basic Gameplay
 * Players have access to minimal resources

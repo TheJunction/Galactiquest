@@ -9,17 +9,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.thejunct</groupId>
-    <artifactId>Galacticraft</artifactId>
+    <artifactId>galactiquest</artifactId>
     <version>0.1</version>
-    <name>Galacticraft</name>
-    <description>Galacticraft plugin. By PantherMan594 and HYPExMon5ter. (c) The Junction Network.</description>
+    <name>Galactiquest</name>
+    <description>Galactiquest plugin. By PantherMan594 and HYPExMon5ter. (c) The Junction Network.</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spigot.version>1.11.2-R0.1-SNAPSHOT</spigot.version>
     </properties>
     <build>
         <defaultGoal>clean package</defaultGoal>
-        <finalName>Galacticraft</finalName>
+        <finalName>Galactiquest</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -51,11 +51,11 @@
                         </replacement>
                         <replacement>
                             <token>#GROUP#</token>
-                            <value>${project.groupId}</value>
+                            <value>${project.groupId}.${project.artifactId}</value>
                         </replacement>
                         <replacement>
                             <token>#NAME#</token>
-                            <value>${project.artifactId}</value>
+                            <value>${project.name}</value>
                         </replacement>
 					</replacements>
                 </configuration>

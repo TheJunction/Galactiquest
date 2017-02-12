@@ -3,7 +3,7 @@
  * Created by PantherMan594.
  */
 
-package io.thejunct.Galacticraft;
+package io.thejunct.galactiquest;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -17,7 +17,7 @@ import org.bukkit.event.player.*;
  * @author david
  */
 class Listeners implements Listener {
-    private static Galacticraft gc = Galacticraft.getInstance();
+    private static Galactiquest gc = Galactiquest.getInstance();
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {

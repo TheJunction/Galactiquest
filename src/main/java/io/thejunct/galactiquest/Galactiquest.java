@@ -1,12 +1,12 @@
 /*
- * Copyright (c) 2016 The Junction Network. All Rights Reserved.
+ * Copyright (c) 2017 The Junction Network. All Rights Reserved.
  * Created by PantherMan594.
  */
 
-package io.thejunct.Galacticraft;
+package io.thejunct.galactiquest;
 
-import io.thejunct.Galacticraft.database.PlayerData;
-import io.thejunct.Galacticraft.database.Stations;
+import io.thejunct.galactiquest.database.PlayerData;
+import io.thejunct.galactiquest.database.Stations;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,15 +18,15 @@ import java.util.logging.Level;
  *
  * @author david
  */
-public class Galacticraft extends JavaPlugin {
-    private static Galacticraft instance;
+public class Galactiquest extends JavaPlugin {
+    private static Galactiquest instance;
     private PlayerData playerData;
     private Stations stations;
     private Dictionary dictionary;
 
     private File libDir;
 
-    public static Galacticraft getInstance() {
+    public static Galactiquest getInstance() {
         return instance;
     }
 

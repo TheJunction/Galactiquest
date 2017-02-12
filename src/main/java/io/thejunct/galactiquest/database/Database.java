@@ -3,9 +3,9 @@
  * Created by PantherMan594.
  */
 
-package io.thejunct.Galacticraft.database;
+package io.thejunct.galactiquest.database;
 
-import io.thejunct.Galacticraft.Galacticraft;
+import io.thejunct.galactiquest.Galactiquest;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,7 +26,7 @@ import java.util.logging.Level;
  */
 @SuppressWarnings({"WeakerAccess", "SqlNoDataSourceInspection", "unused"})
 public abstract class Database {
-    static Galacticraft gc;
+    static Galactiquest gc;
     String dbName;
     private String dbType;
     private String primary;
@@ -34,7 +34,7 @@ public abstract class Database {
     private int uses = 0;
 
     public Database(String dbType, String dbName, String setupSql, String primary) {
-        gc = Galacticraft.getInstance();
+        gc = Galactiquest.getInstance();
         this.dbType = dbType;
         this.dbName = dbName;
         this.primary = primary;

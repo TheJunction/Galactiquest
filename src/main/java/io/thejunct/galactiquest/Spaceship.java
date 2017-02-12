@@ -3,7 +3,7 @@
  * Created by PantherMan594.
  */
 
-package io.thejunct.Galacticraft;
+package io.thejunct.galactiquest;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -30,7 +30,7 @@ class Spaceship {
 
     static {
         spaceships = new ArrayList<>();
-        Bukkit.getScheduler().runTaskTimerAsynchronously(Galacticraft.getInstance(), () -> {
+        Bukkit.getScheduler().runTaskTimerAsynchronously(Galactiquest.getInstance(), () -> {
             for (int i = 0; i < spaceships.size(); i++) {
                 Spaceship ship = spaceships.get(i);
                 Player p = ship.getOwner().getBukkitPlayer();

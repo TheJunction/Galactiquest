@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2016 The Junction Network. All Rights Reserved.
+ * Copyright (c) 2017 The Junction Network. All Rights Reserved.
  * Created by PantherMan594.
  */
 
-package io.thejunct.Galacticraft;
+package io.thejunct.galactiquest;
 
 import org.bukkit.entity.Player;
 
@@ -16,7 +16,7 @@ import java.util.Map;
  * @author david
  */
 class GPlayer {
-    private static Galacticraft gc = Galacticraft.getInstance();
+    private static Galactiquest gc = Galactiquest.getInstance();
     private static Map<Player, GPlayer> gPlayers = new HashMap<>();
 
     private Player bukkitPlayer;
