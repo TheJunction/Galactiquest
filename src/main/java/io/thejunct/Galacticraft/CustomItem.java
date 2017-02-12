@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 The Junction Network. All Rights Reserved.
+ * Copyright (c) 2017 The Junction Network. All Rights Reserved.
  * Created by PantherMan594.
  */
 
@@ -18,83 +18,83 @@ import java.util.List;
  *
  * @author david
  */
-enum CustomItem {
-    SPACESHIP(0, Material.ELYTRA),
-    SPACESHIP_HEAD(1561),
-    SPACESHIP_CONTROL_THRUST(ChatColor.GREEN + "Thrust", 1560, ChatColor.BLUE + "Right click to move forward."),
-    SPACESHIP_CONTROL_REVERSE(ChatColor.RED + "Reverse", 1559, ChatColor.BLUE + "Right click to move backwards."),
-    SPACESHIP_CONTROL_LASER(ChatColor.DARK_RED + "Laser", 1558, ChatColor.BLUE + "Right click to move shoot a laser.", "Mines meteors.");
+class CustomItem {
+    static int dHoeIter = Material.DIAMOND_HOE.getMaxDurability();
 
-    private String name;
-    private List<String> lore;
-    private int dmg;
-    private Material type;
+    enum Item {
+        SPACESHIP(),
+        SPACESHIP_HEAD(),
+        SPACESHIP_CONTROL_CONTROLS(ChatColor.BLUE + "Ship Controls", ChatColor.BLUE + "Sprint to move forward", ChatColor.BLUE + "Sneak to slow down", ChatColor.BLUE + "Right click to fire a laser");
 
-    CustomItem(String name, int dmg, String... lore) {
-        this.name = name;
-        this.lore = Arrays.asList(lore);
-        this.dmg = dmg;
-        this.type = Material.DIAMOND_HOE;
-    }
+        private String name;
+        private int dmg;
+        private Material type;
+        private List<String> lore;
 
-    CustomItem(int dmg, Material type) {
-        this.name = null;
-        this.lore = null;
-        this.dmg = dmg;
-        this.type = type;
-    }
+        Item(String name, int dmg, Material type, String... lore) {
+            this.name = name;
+            this.dmg = dmg;
+            this.type = type;
+            this.lore = Arrays.asList(lore);
+        }
 
-    CustomItem(int dmg) {
-        this.name = null;
-        this.lore = null;
-        this.dmg = dmg;
-        this.type = Material.DIAMOND_HOE;
-    }
+        Item(String name, String... lore) {
+            this(name, dHoeIter--, Material.DIAMOND_HOE, lore);
+        }
 
-    public static CustomItem getCustomItem(ItemStack item) {
-        for (CustomItem cItem : CustomItem.values()) {
-            if (item.getType() == cItem.getType() && item.getDurability() == cItem.getDmg()) {
-                ItemMeta meta = item.getItemMeta();
-                if (meta == null) {
-                    if (cItem.getName() == null && cItem.getLore() == null) {
+        Item() {
+            this(null, dHoeIter--, Material.DIAMOND_HOE);
+        }
+
+        public static Item getCustomItem(ItemStack item) {
+            for (Item cItem : Item.values()) {
+                if (item.getType() == cItem.getType() && item.getDurability() == cItem.getDmg()) {
+                    ItemMeta meta = item.getItemMeta();
+                    if (meta == null) {
+                        if (cItem.getName() == null && cItem.getLore() == null) {
+                            return cItem;
+                        }
+                        continue;
+                    }
+                    if (meta.getDisplayName().equals(cItem.getName()) && meta.getLore().equals(cItem.getLore())) {
                         return cItem;
                     }
-                    continue;
-                }
-                if (meta.getDisplayName().equals(cItem.getName()) && meta.getLore().equals(cItem.getLore())) {
-                    return cItem;
                 }
             }
+            return null;
         }
-        return null;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public List<String> getLore() {
-        return lore;
-    }
-
-    public int getDmg() {
-        return dmg;
-    }
-
-    public Material getType() {
-        return type;
-    }
-
-    public ItemStack create(int number) {
-        ItemStack item = new ItemStack(type, number, (short) dmg);
-        ItemMeta meta = item.getItemMeta();
-        if (name != null) {
-            meta.setDisplayName(name);
+        public String getName() {
+            return name;
         }
-        if (lore != null) {
-            meta.setLore(lore);
+
+        public List<String> getLore() {
+            return lore;
         }
-        item.setItemMeta(meta);
-        return item;
+
+        public int getDmg() {
+            return dmg;
+        }
+
+        public Material getType() {
+            return type;
+        }
+
+        public ItemStack create(int number) {
+            ItemStack item = new ItemStack(type, number, (short) dmg);
+            ItemMeta meta = item.getItemMeta();
+            if (name != null) {
+                meta.setDisplayName(name);
+            }
+            if (lore != null) {
+                meta.setLore(lore);
+            }
+            item.setItemMeta(meta);
+            return item;
+        }
+    }
+
+    enum Block {
+
     }
 }

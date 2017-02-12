@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 The Junction Network. All Rights Reserved.
+ * Copyright (c) 2017 The Junction Network. All Rights Reserved.
  * Created by PantherMan594.
  */
 
@@ -119,6 +119,10 @@ public abstract class Database {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbName, "david", "DavidShen");
+
+                uses = 0;
+                return connection;
+
             } catch (ClassNotFoundException e) {
                 gc.getLogger().log(Level.SEVERE, "Unable to load the MySQL Library.");
             } catch (Exception e) {
